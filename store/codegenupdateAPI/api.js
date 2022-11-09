@@ -42,6 +42,24 @@ function rest_auth_registration_verify_email_create(payload) {
     payload.data
   )
 }
+function api_v1_house_create(payload) {
+  return codegenupdateAPI.post(`/api/v1/house/`, payload.data)
+}
+function api_v1_house_list(payload) {
+  return codegenupdateAPI.get(`/api/v1/house/`)
+}
+function api_v1_house_partial_update(payload) {
+  return codegenupdateAPI.patch(`/api/v1/house/${payload.id}/`, payload.data)
+}
+function api_v1_house_read(payload) {
+  return codegenupdateAPI.get(`/api/v1/house/${payload.id}/`)
+}
+function api_v1_house_delete(payload) {
+  return codegenupdateAPI.delete(`/api/v1/house/${payload.id}/`)
+}
+function api_v1_house_update(payload) {
+  return codegenupdateAPI.put(`/api/v1/house/${payload.id}/`, payload.data)
+}
 function rest_auth_password_reset_create(payload) {
   return codegenupdateAPI.post(`/rest-auth/password/reset/`, payload.data)
 }
@@ -60,6 +78,12 @@ export const apiService = {
   rest_auth_user_read,
   rest_auth_user_update,
   rest_auth_registration_verify_email_create,
+  api_v1_house_create,
+  api_v1_house_list,
+  api_v1_house_partial_update,
+  api_v1_house_read,
+  api_v1_house_delete,
+  api_v1_house_update,
   rest_auth_password_reset_create,
   rest_auth_registration_create
 }
